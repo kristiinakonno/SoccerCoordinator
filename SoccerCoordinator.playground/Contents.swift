@@ -158,16 +158,19 @@ raptors = [experiencedPlayers[2], experiencedPlayers[3], experiencedPlayers[6], 
 var letters: [String] = []
 
 for p in dragons{
-    let letter = "Dear \(p["Guardian"])! \(p["name"]) first traning will be with Dragons on \(teamPlayingTimes["dragons"]))"
+    let letter = "Dear \(p["guardian"]!)! \(p["name"]!) first traning will be with Dragons on \(teamPlayingTimes["dragons"]!)."
+    print(letter)
     letters.append(letter)
 }
 
 for p in sharks{
-    let letter = "Dear \(p["Guardian"])! \(p["name"]) first traning will be with Sharks on \(teamPlayingTimes["sharks"]))"
+    let letter = "Dear \(p["guardian"]!)! \(p["name"]!) first traning will be with Sharks on \(teamPlayingTimes["sharks"]!)."
+    print(letter)
     letters.append(letter)
 }
 
 for p in raptors{
-    let letter = "Dear \(p["Guardian"])! \(p["name"]) first traning will be with Raptors on \(teamPlayingTimes["raptors"]))"
+    let letter = "Dear \(p["guardian"]!)! \(p["name"]!) first traning will be with Raptors on \(teamPlayingTimes["raptors"]!)."
+    print(letter)
     letters.append(letter)
 }
