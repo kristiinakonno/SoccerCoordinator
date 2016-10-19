@@ -1,13 +1,16 @@
-//This a function to help check if a list of players is in a descending order
+//This a function to help check if a list of players is in am ascending order
 func isBalanced(let players: [[String:String]]) -> Bool {
     let length = players.count
     var i = 0;
+    //I am getting all of the players up untill the very last one because i am comparing this players height with the next one
     while (i < length - 1){
+        //the a player is taller then the previous one then the list is not in an ascending order the the function has to return false
         if (players[i]["height"] > players[i + 1]["height"]){
             return false
         }
         i++
     }
+    //if it hasn't return false, then eveything is fine and we can return true
     return true
 }
 
