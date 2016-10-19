@@ -1,3 +1,4 @@
+//This a function to help check if a list of players is in a descending order
 func isBalanced(let players: [[String:String]]) -> Bool {
     let length = players.count
     var i = 0;
@@ -10,6 +11,7 @@ func isBalanced(let players: [[String:String]]) -> Bool {
     return true
 }
 
+//All the dictionaries for the players
 let player1 = [
     "name": "Joe Smith",
     "height": "42",
@@ -101,20 +103,25 @@ let player18 = [
     "experience": "yes",
     "guardian": "Hyman and Rachel Krustofski"]
 
+//This is the list containg all of the players
 let allPlayers: [[String:String]] = [player1, player2, player3, player4, player5, player6, player7, player8, player9, player10, player11, player12, player13, player14, player15, player16, player17, player18]
 
+//This is the list that has all of the teams and when will their first training be.
 let teamPlayingTimes = [
     "dragons": "March 17, 1pm",
     "sharks": "March 17, 3pm",
     "raptors": "March 18, 1pm"]
 
+//Empty listst for experienced and inexperienced players to make dividing into the teams easier
 var experiencedPlayers: [[String:String]] = []
 var inexperiencedPlayers: [[String:String]] = []
 
+//Empty lists for all of the 3 teams.
 var dragons: [[String:String]] = []
 var sharks: [[String:String]] = []
 var raptors: [[String:String]] = []
 
+//Diving players up in order of their experience to previously made lists
 for player in allPlayers{
     if (player["experience"] == "yes"){
         experiencedPlayers.append(player)
@@ -123,6 +130,7 @@ for player in allPlayers{
     }
 }
 
+//Making the list on experienced players to be in a descending order. That makes it easier to divide them up by height
 while (!isBalanced(experiencedPlayers)){
     let length = experiencedPlayers.count
     var i = 0;
@@ -136,6 +144,7 @@ while (!isBalanced(experiencedPlayers)){
     }
 }
 
+//Making the list of inexperienced players to be also in descenging order.
 while (!isBalanced(inexperiencedPlayers)){
     let length = inexperiencedPlayers.count
     var i = 0;
@@ -149,12 +158,14 @@ while (!isBalanced(inexperiencedPlayers)){
     }
 }
 
+//Getting specific people to the 3 team so that them teams would be divided by height
 dragons = [experiencedPlayers[0], experiencedPlayers[4], experiencedPlayers[8], inexperiencedPlayers[0], inexperiencedPlayers[4], inexperiencedPlayers[8]]
 
 sharks = [experiencedPlayers[1], experiencedPlayers[5], experiencedPlayers[7], inexperiencedPlayers[1], inexperiencedPlayers[3], inexperiencedPlayers[7]]
 
 raptors = [experiencedPlayers[2], experiencedPlayers[3], experiencedPlayers[6], inexperiencedPlayers[2], inexperiencedPlayers[5], inexperiencedPlayers[6]]
 
+//From here on comes the printing of the letters for all of the teams and storing them in a list
 var letters: [String] = []
 
 for p in dragons{
